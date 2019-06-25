@@ -1,18 +1,15 @@
-var dice = {
- resetThis: 0,
- sides: 6,
- roll: function () {
-  var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-   return randomNumber;
- }
+class Dice {
+    constructor(n, sides = 6) {
+        this.sides = 6;
+        this.n = n;
+    }
+    roll() {
+        var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+        return `die${this.n} rolled ${randomNumber}`;
+    }
 }
-
-
-var dice2 = {
- resetThis2: 0,
- sides2: 6,
- roll2: function () {
-  var randomNumber2 = Math.floor(Math.random() * this.sides2) + 1;
-   return randomNumber2;
- }
-}
+const dieOne = new Dice(1);
+const dieTwo = new Dice(2);
+const newRoll = () => {
+    return `${dieOne.roll()} ${dieTwo.roll()}`;
+};
